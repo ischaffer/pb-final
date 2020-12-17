@@ -1,0 +1,24 @@
+div.hero {
+    height: 175px;
+    background-color: #7a7b7c;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-top: 40px;
+}
+
+div.hero h1,
+div.hero h2 {
+    text-align: center;
+    margin: 0;
+}
+
+div.hero h1 {
+    color: #fff;
+    font-size: 4.2em;
+    margin-bottom: 20px;
+}
+
+div.hero h2 {
+    color: #000000;
+}
