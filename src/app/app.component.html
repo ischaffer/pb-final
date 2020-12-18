@@ -1,9 +1,14 @@
 <div class="page">
   <app-menu></app-menu>
   <app-hero></app-hero>
-  
 
   <router-outlet></router-outlet>
 </div>
+
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>
 
 

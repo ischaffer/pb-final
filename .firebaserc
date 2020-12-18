@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "personalbudget-a6420": {
+      "hosting": {
+        "pb-final": [
+          "personalbudget-a6420"
+        ]
+      }
+    }
+  }
+}

@@ -1,14 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ConfigureBudgetsComponent } from './configure-budgets/configure-budgets.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ExpensesComponent } from './expenses/expenses.component';
+import { ConfigureBudgetsComponent } from './pages/configure-budgets/configure-budgets.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ExpensesComponent } from './pages/expenses/expenses.component';
 import { HeroComponent } from './hero/hero.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 import { MenuComponent } from './menu/menu.component';
-import { SignupComponent } from './signup/signup.component';
+import { P404Component } from './pages/p404/p404.component';
+
+import {
+  AngularFireAuthGuard,
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+} from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToDashboard = () => redirectLoggedInTo(['']);
 
 const routes: Routes = [
   {
@@ -40,14 +49,17 @@ const routes: Routes = [
     component: LogoutComponent,
   },
   {
-    path: 'signup',
-    component: SignupComponent,
-  },
-  {
     path: 'hero',
     component: HeroComponent,
-  }
-
+  },
+  {
+    path: 'home',
+    component: HomepageComponent,
+  },
+  {
+    path: '**',
+    component: P404Component,
+  },
 
 ];
 
